@@ -1,0 +1,14 @@
+- Event Saved: Availability now sent as a boolean (online and offline pages). - bug
+- CSAT and NPS modals to live build.
+"- Missing mandatory details : opens for users with no mobile number, and the asterisks are
+ orange. - bug"
+- Event dashboard cards: three-dot menu with History. - requirement
+- Event History popup: shows all entries newest first, with relative times and an orange scrollbar. - requirement
+"- Revision Management timeline: fixed lines, the latest entry in orange with older ones grey,
+badges, and relative times. - requirement"
+- Edit event form: saved speakers added in form - modification
+
+"Locked down the Event Dashboard. Only users flagged as PIC can open it now.
+Anyone else who tries is sent back to the home page."
+"Added a menu shortcut. PIC users now see an ""Event Dashboard""
+option in their profile menu, right under ""View Profile""."

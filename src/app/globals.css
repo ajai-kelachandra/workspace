@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Opero-style palette. Token names starting with --ios-* are kept for the impact roles:
+ *   --ios-blue   = SOURCE   (brand purple)
+ *   --ios-orange = DIRECT   (orange)
+ *   --ios-yellow = INDIRECT (amber)
+ *   --ios-green  = VERIFIED SAFE
+ *   --ios-gray   = UNAFFECTED
+ */
+:root {
+  --page: #ececef;
+  --bg: #f6f6f7;
+  --surface: #ffffff;
+  --surface-solid: #ffffff;
+  --text: #1b1b21;
+  --text-2: #72747f;
+  --sep: #ececf0;
+  --chip: #f1f1f4;
+  --edge: #c9cad2;
+  --accent: #5a2a82;
+  --accent-fg: #ffffff;
+  --brand-text: #6d33a8;
+  --brand-tint: #f4ecfa;
+  --orange: #e5791f;
+  --teal: #14958a;
+  --canvas-dot: #d5d5db;
+  --shadow: 0 1px 2px rgba(27, 27, 33, 0.04), 0 6px 20px -8px rgba(27, 27, 33, 0.12);
+  --frame-shadow: 0 30px 80px -20px rgba(27, 27, 33, 0.25), 0 0 0 1px rgba(27, 27, 33, 0.04);
+  --ios-blue: #6f3fb8;
+  --ios-orange: #e5791f;
+  --ios-yellow: #d9a406;
+  --ios-green: #3d9a67;
+  --ios-red: #e0453a;
+  --ios-gray: #a8aab4;
+}
+html.dark {
+  --page: #08080b;
+  --bg: #0e0e12;
+  --surface: #17171d;
+  --surface-solid: #17171d;
+  --text: #f1f1f5;
+  --text-2: #9597a6;
+  --sep: #26262f;
+  --chip: #22222a;
+  --edge: #3b3b46;
+  --accent: #8a55c7;
+  --accent-fg: #ffffff;
+  --brand-text: #b88ae8;
+  --brand-tint: #231a30;
+  --orange: #f08a33;
+  --teal: #2bc4b5;
+  --canvas-dot: #24242c;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px -8px rgba(0, 0, 0, 0.6);
+  --frame-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --ios-blue: #a678d9;
+  --ios-orange: #f08a33;
+  --ios-yellow: #f0c419;
+  --ios-green: #4cc58a;
+  --ios-red: #f0645a;
+  --ios-gray: #6b6e7d;
+  color-scheme: dark;
+}
+
+html, body { height: 100%; }
+button, input, select, textarea { font-family: inherit; }
+body {
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--app-font, "Elms Sans", system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* card (class name kept for existing components) */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--sep);
+  box-shadow: var(--shadow);
+}
+
+input:not([type="checkbox"]), select, textarea { transition: border-color .15s, box-shadow .15s; }
+input:not([type="checkbox"]):focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input[type="checkbox"] { accent-color: var(--accent); }
+
+/* React Flow chrome */
+.react-flow { background: var(--bg); }
+.react-flow__minimap { border-radius: 14px; box-shadow: var(--shadow); border: 1px solid var(--sep); overflow: hidden; }
+.react-flow__edge-path { stroke-linecap: round; stroke-linejoin: round; }
+.react-flow__edge-textbg { stroke: var(--sep); stroke-width: 1; }
+.react-flow__handle { transition: transform .12s; }
+.react-flow__node:hover .react-flow__handle { transform: scale(1.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
